@@ -3038,8 +3038,8 @@ function $m_Lio_kaitai_struct_Utils$() {
 function $c_Lio_kaitai_struct_Version$() {
   this.Lio_kaitai_struct_Version$__f_version = null;
   this.Lio_kaitai_struct_Version$__f_gitTime = null;
-  this.Lio_kaitai_struct_Version$__f_version = "0.12-SNAPSHOT20251018.014640.fac2ac9";
-  this.Lio_kaitai_struct_Version$__f_gitTime = "2025-10-18T01:46:40Z"
+  this.Lio_kaitai_struct_Version$__f_version = "0.12-SNAPSHOT20251110.202039.1a11e75";
+  this.Lio_kaitai_struct_Version$__f_gitTime = "2025-11-10T20:20:39Z"
 }
 $c_Lio_kaitai_struct_Version$.prototype = new $h_O();
 $c_Lio_kaitai_struct_Version$.prototype.constructor = $c_Lio_kaitai_struct_Version$;
@@ -34794,7 +34794,7 @@ $c_Lio_kaitai_struct_ClassCompiler.prototype.compileInstance__sci_List__Lio_kait
   } else {
     throw new $c_s_MatchError(instSpec)
   };
-  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, $n(instSpec).isNullable__Z());
   $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceFooter__V();
   if ($n(this.Lio_kaitai_struct_ClassCompiler__f_config).Lio_kaitai_struct_RuntimeConfig__f_readWrite) {
     if ((instSpec instanceof $c_Lio_kaitai_struct_format_ParseInstanceSpec)) {
@@ -44531,7 +44531,7 @@ $c_Lio_kaitai_struct_GoClassCompiler.prototype.compileInstance__sci_List__Lio_ka
   } else {
     throw new $c_s_MatchError(instSpec)
   };
-  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, $n(instSpec).isNullable__Z());
   $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceFooter__V()
 });
 $c_Lio_kaitai_struct_GoClassCompiler.prototype.compileCalcEndian__Lio_kaitai_struct_datatype_CalcEndian__V = (function(ce) {
@@ -44853,7 +44853,7 @@ $c_Lio_kaitai_struct_NimClassCompiler.prototype.compileInstance__sci_List__Lio_k
   } else {
     throw new $c_s_MatchError(instSpec)
   };
-  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, $n(instSpec).isNullable__Z());
   $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceFooter__V()
 });
 $c_Lio_kaitai_struct_NimClassCompiler.prototype.compileTypes__Lio_kaitai_struct_format_ClassSpec__V = (function(curClass) {
@@ -45156,7 +45156,7 @@ $c_Lio_kaitai_struct_RustClassCompiler.prototype.compileInstance__sci_List__Lio_
   } else {
     throw new $c_s_MatchError(instSpec)
   };
-  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, $n(instSpec).isNullable__Z());
   $n(this.Lio_kaitai_struct_ClassCompiler__f_lang).instanceFooter__V()
 });
 var $d_Lio_kaitai_struct_RustClassCompiler = new $TypeData().initClass({
@@ -52783,7 +52783,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.idToStr__Lio_kaitai_struct
   }
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.privateMemberName__Lio_kaitai_struct_format_Identifier__T = (function(id) {
-  return ("self." + this.idToStr__Lio_kaitai_struct_format_Identifier__T(id))
+  return ((id instanceof $c_Lio_kaitai_struct_format_InstanceIdentifier) ? "_v" : ("self." + this.idToStr__Lio_kaitai_struct_format_Identifier__T(id)))
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T = (function(attrType, importList, curClass) {
   while (true) {
@@ -52919,10 +52919,10 @@ $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.kaitaiType2NativeType__Lio
       return "f64"
     };
     if ((x1 instanceof $c_Lio_kaitai_struct_datatype_DataType$StrType)) {
-      return "[]u8"
+      return "[]const u8"
     };
     if ((x1 instanceof $c_Lio_kaitai_struct_datatype_DataType$BytesType)) {
-      return "[]u8"
+      return "[]const u8"
     };
     var x$21 = $m_Lio_kaitai_struct_datatype_DataType$KaitaiStreamType$();
     if ((x$21 === x1)) {
@@ -52932,7 +52932,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.kaitaiType2NativeType__Lio
       var $$x7 = (x$23 === x1)
     };
     if ($$x7) {
-      return "*kaitai_struct.KaitaiStream"
+      return "*_imp_kaitai_struct.KaitaiStream"
     };
     var x$25 = $m_Lio_kaitai_struct_datatype_DataType$AnyType$();
     if ((x$25 === x1)) {
@@ -52966,7 +52966,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.kaitaiType2NativeType__Lio
     };
     if ((x1 instanceof $c_Lio_kaitai_struct_datatype_DataType$ArrayType)) {
       var x68 = $as_Lio_kaitai_struct_datatype_DataType$ArrayType(x1);
-      return (("*std.ArrayList(" + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T($n(x68).Lio_kaitai_struct_datatype_DataType$ArrayType__f_elType, importList, curClass)) + ")")
+      return (("*_imp_std.ArrayList(" + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T($n(x68).Lio_kaitai_struct_datatype_DataType$ArrayType__f_elType, importList, curClass)) + ")")
     };
     if ((x1 instanceof $c_Lio_kaitai_struct_datatype_DataType$SwitchType)) {
       var x69 = $as_Lio_kaitai_struct_datatype_DataType$SwitchType(x1);
@@ -52981,7 +52981,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.kaitaiType2NativeType__Lio
   return (isNullable ? ("?" + nonNullable) : nonNullable)
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.types2class__sci_List__Z__T = (function(name, isExternal) {
-  var prefix = (isExternal ? ($n(name).head__O() + ".") : "");
+  var prefix = (isExternal ? (("_imp_" + $n(name).head__O()) + ".") : "");
   var this$3 = $n(name);
   var f = ((x$2) => {
     var x = $as_T(x$2);
@@ -53009,7 +53009,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.types2class__sci_List__Z__
 $c_Lio_kaitai_struct_languages_ZigCompiler$.prototype.externalTypeDeclaration__Lio_kaitai_struct_ExternalType__Lio_kaitai_struct_ImportList__V = (function(extType, importList) {
   var moduleName = $as_T($n($n(extType).name__sci_List()).head__O());
   var this$1 = $n(importList);
-  var s = (((("const " + moduleName) + " = @import(\"") + moduleName) + ".zig\");");
+  var s = (((("const _imp_" + moduleName) + " = @import(\"") + moduleName) + ".zig\");");
   $m_Lio_kaitai_struct_Utils$().addUniqueAttr__scm_ListBuffer__O__V(this$1.Lio_kaitai_struct_ImportList__f_list, s)
 });
 var $d_Lio_kaitai_struct_languages_ZigCompiler$ = new $TypeData().initClass({
@@ -53062,14 +53062,14 @@ function $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__attrPa
     var $$x1 = $n($thiz.translator__Lio_kaitai_struct_translators_BaseTranslator());
     var dataType$1 = $n(x5).Lio_kaitai_struct_datatype_DataType$StrFromBytesType__f_bytes;
     var expr = $n($$x1).bytesToStr__T__T__T($f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__parseExprBytes__Lio_kaitai_struct_datatype_DataType$BytesType__T__T($thiz, dataType$1, io), $n(x5).Lio_kaitai_struct_datatype_DataType$StrFromBytesType__f_encoding);
-    $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V($thiz, id, expr, rep, isRaw)
+    $thiz.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(id, expr, rep, isRaw)
   } else if ((dataType instanceof $c_Lio_kaitai_struct_datatype_DataType$EnumType)) {
     var x6 = $as_Lio_kaitai_struct_datatype_DataType$EnumType(dataType);
     var expr$2 = $n($thiz.translator__Lio_kaitai_struct_translators_BaseTranslator()).doEnumById__Lio_kaitai_struct_format_EnumSpec__T__T($as_Lio_kaitai_struct_format_EnumSpec($n($n(x6).Lio_kaitai_struct_datatype_DataType$EnumType__f_enumSpec).get__O()), $thiz.parseExpr__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_datatype_DataType__T__s_Option__T($n(x6).Lio_kaitai_struct_datatype_DataType$EnumType__f_basedOn, $n(x6).Lio_kaitai_struct_datatype_DataType$EnumType__f_basedOn, io, defEndian));
-    $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V($thiz, id, expr$2, rep, isRaw)
+    $thiz.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(id, expr$2, rep, isRaw)
   } else {
     var expr$3 = $thiz.parseExpr__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_datatype_DataType__T__s_Option__T(dataType, assignType, io, defEndian);
-    $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V($thiz, id, expr$3, rep, isRaw)
+    $thiz.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(id, expr$3, rep, isRaw)
   }
 }
 function $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__attrBytesTypeParse__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__Z__V($thiz, id, dataType, io, rep, isRaw) {
@@ -53084,7 +53084,7 @@ function $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__attrBy
     var rawId = new $c_Lio_kaitai_struct_format_RawIdentifier(id)
   };
   var expr = $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__parseExprBytes__Lio_kaitai_struct_datatype_DataType$BytesType__T__T($thiz, dataType, io);
-  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V($thiz, rawId, expr, rep, isRaw);
+  $thiz.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(rawId, expr, rep, isRaw);
   var this$1 = $n($n(dataType).process__s_Option());
   if ((!this$1.isEmpty__Z())) {
     var arg1 = this$1.get__O();
@@ -53122,7 +53122,7 @@ function $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__attrUs
   };
   var expr = $thiz.parseExpr__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_datatype_DataType__T__s_Option__T(dataType, dataType, newIO, defEndian);
   if ($n($n($as_Lio_kaitai_struct_languages_components_LanguageCompiler($thiz)).Lio_kaitai_struct_languages_components_LanguageCompiler__f_config).Lio_kaitai_struct_RuntimeConfig__f_autoRead) {
-    $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V($thiz, id, expr, rep, false)
+    $thiz.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(id, expr, rep, false)
   } else {
     var x = $m_Lio_kaitai_struct_format_NoRepeat$();
     if ((x === rep)) {
@@ -53134,7 +53134,7 @@ function $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__attrUs
       $thiz.tryFinally__F0__F0__V(new $c_sjsr_AnonFunction0((() => {
         $thiz.userTypeDebugRead__T__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_datatype_DataType__V(tempVarName, dataType, assignType)
       })), new $c_sjsr_AnonFunction0((() => {
-        $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V($thiz, id, tempVarName, rep, false)
+        $thiz.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(id, tempVarName, rep, false)
       })))
     }
   }
@@ -92960,7 +92960,7 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.doArrayLiteral__Lio_kai
     return this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(v, 0)
   })))));
   var commaStr = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ", ", "");
-  return (((((((("std.ArrayList(" + nativeType) + "){ .items = @constCast(@as([]const ") + nativeType) + ", &.{ ") + commaStr) + " })), .capacity = ") + $n(value).length__I()) + " }")
+  return (((((((("_imp_std.ArrayList(" + nativeType) + "){ .items = @constCast(@as([]const ") + nativeType) + ", &.{ ") + commaStr) + " })), .capacity = ") + $n(value).length__I()) + " }")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.doByteArrayLiteral__sci_Seq__T = (function(arr) {
   var this$2 = $n($as_sc_IterableOnceOps($n(arr).map__F1__O(new $c_sjsr_AnonFunction1(((x$1$2) => {
@@ -93006,8 +93006,8 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.strLiteralGenericCC__C_
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.genericBinOp__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_exprlang_Ast$binaryop__Lio_kaitai_struct_exprlang_Ast$expr__I__T = (function(left, op, right, extPrec) {
   var _1 = this.detectType__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType(left);
   var _2 = this.detectType__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType(right);
-  if ((_1 instanceof $c_Lio_kaitai_struct_datatype_DataType$IntType)) {
-    if ((_2 instanceof $c_Lio_kaitai_struct_datatype_DataType$IntType)) {
+  if ((_1 instanceof $c_Lio_kaitai_struct_datatype_DataType$NumericType)) {
+    if ((_2 instanceof $c_Lio_kaitai_struct_datatype_DataType$NumericType)) {
       var x = $m_Lio_kaitai_struct_exprlang_Ast$operator$Mod$();
       var $$x1 = (x === op)
     } else {
@@ -93017,7 +93017,7 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.genericBinOp__Lio_kaita
     var $$x1 = false
   };
   if ($$x1) {
-    return (((("kaitai_struct.KaitaiStream.mod(" + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ")")
+    return (((("@mod(" + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ")")
   } else {
     return $f_Lio_kaitai_struct_translators_CommonOps__genericBinOp__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_exprlang_Ast$binaryop__Lio_kaitai_struct_exprlang_Ast$expr__I__T(this, left, op, right, extPrec)
   }
@@ -93077,27 +93077,27 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.doStrCompareOp__Lio_kai
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.doBytesCompareOp__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_exprlang_Ast$cmpop__Lio_kaitai_struct_exprlang_Ast$expr__I__T = (function(left, op, right, extPrec) {
   var x = $m_Lio_kaitai_struct_exprlang_Ast$cmpop$Eq$();
   if ((x === op)) {
-    return (((("std.mem.eql(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ")")
+    return (((("_imp_std.mem.eql(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ")")
   } else {
     var x$3 = $m_Lio_kaitai_struct_exprlang_Ast$cmpop$NotEq$();
     if ((x$3 === op)) {
-      return (((("!std.mem.eql(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ")")
+      return (((("!_imp_std.mem.eql(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ")")
     } else {
       var x$5 = $m_Lio_kaitai_struct_exprlang_Ast$cmpop$Lt$();
       if ((x$5 === op)) {
-        return (((("(std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ") == .lt)")
+        return (((("(_imp_std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ") == .lt)")
       } else {
         var x$7 = $m_Lio_kaitai_struct_exprlang_Ast$cmpop$Gt$();
         if ((x$7 === op)) {
-          return (((("(std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ") == .gt)")
+          return (((("(_imp_std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ") == .gt)")
         } else {
           var x$9 = $m_Lio_kaitai_struct_exprlang_Ast$cmpop$LtE$();
           if ((x$9 === op)) {
-            return (((("std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ").compare(.lte)")
+            return (((("_imp_std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ").compare(.lte)")
           } else {
             var x$11 = $m_Lio_kaitai_struct_exprlang_Ast$cmpop$GtE$();
             if ((x$11 === op)) {
-              return (((("std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ").compare(.gte)")
+              return (((("_imp_std.mem.order(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + ").compare(.gte)")
             } else {
               throw new $c_s_MatchError(op)
             }
@@ -93130,10 +93130,10 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.doCast__Lio_kaitai_stru
   return (((("@as(" + $m_Lio_kaitai_struct_languages_ZigCompiler$().kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T(typeName, this.Lio_kaitai_struct_translators_ZigTranslator__f_importList, $n(this.Lio_kaitai_struct_translators_BaseTranslator__f_provider).Lio_kaitai_struct_ClassTypeProvider__f_nowClass)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(value, 0)) + ")")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.strConcat__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_exprlang_Ast$expr__I__T = (function(left, right, extPrec) {
-  return (((("(try std.mem.concat(self._allocator(), u8, &[_][]const u8{ " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + " }))")
+  return (((("(try _imp_std.mem.concat(self._allocator(), u8, &[_][]const u8{ " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(left, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(right, 0)) + " }))")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.strToInt__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(s, base) {
-  return (((("(try std.fmt.parseInt(i32, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(s, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(base, 0)) + "))")
+  return (((("(try _imp_std.fmt.parseInt(i32, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(s, 0)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(base, 0)) + "))")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.enumToInt__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType$EnumType__T = (function(v, et) {
   return (("@intFromEnum(" + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(v, 0)) + ")")
@@ -93145,10 +93145,10 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.boolToInt__Lio_kaitai_s
   return (("@intFromBool(" + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(value, 0)) + ")")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.intToStr__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(i) {
-  return (("(try std.fmt.allocPrint(self._allocator(), \"{d}\", .{ " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(i, 0)) + " }))")
+  return (("(try _imp_std.fmt.allocPrint(self._allocator(), \"{d}\", .{ " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(i, 0)) + " }))")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.bytesToStr__T__T__T = (function(bytesExpr, encoding) {
-  return (((("kaitai_struct.KaitaiStream.bytesToStr(" + bytesExpr) + ", ") + $f_Lio_kaitai_struct_translators_CommonLiterals__doStringLiteral__T__T(this, encoding)) + ")")
+  return (((("(try _imp_kaitai_struct.KaitaiStream.bytesToStr(self._allocator(), " + bytesExpr) + ", ") + $f_Lio_kaitai_struct_translators_CommonLiterals__doStringLiteral__T__T(this, encoding)) + "))")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.bytesLength__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(b) {
   return (this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(b, 999) + ".len")
@@ -93167,10 +93167,10 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.bytesLast__Lio_kaitai_s
   return this.bytesSubscript__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_exprlang_Ast$expr__T(b, new $c_Lio_kaitai_struct_exprlang_Ast$expr$BinOp($$x2, $$x1, new $c_Lio_kaitai_struct_exprlang_Ast$expr$IntNum(this$1.apply__I__s_math_BigInt(1))))
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.bytesMin__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(b) {
-  return (("std.mem.min(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(b, 0)) + ")")
+  return (("_imp_std.mem.min(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(b, 0)) + ")")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.bytesMax__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(b) {
-  return (("std.mem.max(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(b, 0)) + ")")
+  return (("_imp_std.mem.max(u8, " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(b, 0)) + ")")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.strReverse__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(s) {
   return (("new StringBuilder(" + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(s, 0)) + ").reverse().toString()")
@@ -93191,12 +93191,12 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.arraySize__Lio_kaitai_s
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.arrayMin__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(a) {
   var t = this.detectType__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType(a);
   var elType = $n($as_Lio_kaitai_struct_datatype_DataType$ArrayType(t)).Lio_kaitai_struct_datatype_DataType$ArrayType__f_elType;
-  return (((("std.mem.min(" + $m_Lio_kaitai_struct_languages_ZigCompiler$().kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T(elType, this.Lio_kaitai_struct_translators_ZigTranslator__f_importList, $n(this.Lio_kaitai_struct_translators_BaseTranslator__f_provider).Lio_kaitai_struct_ClassTypeProvider__f_nowClass)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(a, 999)) + ".items)")
+  return (((("_imp_std.mem.min(" + $m_Lio_kaitai_struct_languages_ZigCompiler$().kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T(elType, this.Lio_kaitai_struct_translators_ZigTranslator__f_importList, $n(this.Lio_kaitai_struct_translators_BaseTranslator__f_provider).Lio_kaitai_struct_ClassTypeProvider__f_nowClass)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(a, 999)) + ".items)")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.arrayMax__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(a) {
   var t = this.detectType__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType(a);
   var elType = $n($as_Lio_kaitai_struct_datatype_DataType$ArrayType(t)).Lio_kaitai_struct_datatype_DataType$ArrayType__f_elType;
-  return (((("std.mem.max(" + $m_Lio_kaitai_struct_languages_ZigCompiler$().kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T(elType, this.Lio_kaitai_struct_translators_ZigTranslator__f_importList, $n(this.Lio_kaitai_struct_translators_BaseTranslator__f_provider).Lio_kaitai_struct_ClassTypeProvider__f_nowClass)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(a, 999)) + ".items)")
+  return (((("_imp_std.mem.max(" + $m_Lio_kaitai_struct_languages_ZigCompiler$().kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_ImportList__Lio_kaitai_struct_format_ClassSpec__T(elType, this.Lio_kaitai_struct_translators_ZigTranslator__f_importList, $n(this.Lio_kaitai_struct_translators_BaseTranslator__f_provider).Lio_kaitai_struct_ClassTypeProvider__f_nowClass)) + ", ") + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(a, 999)) + ".items)")
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.kaitaiStreamSize__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(value) {
   return (("(try " + this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(value, 999)) + ".size())")
@@ -93206,6 +93206,29 @@ $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.kaitaiStreamEof__Lio_ka
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.kaitaiStreamPos__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(value) {
   return (this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(value, 999) + ".pos()")
+});
+$c_Lio_kaitai_struct_translators_ZigTranslator.prototype.doInterpolatedStringLiteral__sci_Seq__T = (function(exprs) {
+  if ($n(exprs).isEmpty__Z()) {
+    return $f_Lio_kaitai_struct_translators_CommonLiterals__doStringLiteral__T__T(this, "")
+  } else {
+    var this$2 = $n($as_sc_IterableOnceOps($n(exprs).map__F1__O(new $c_sjsr_AnonFunction1(((expr$2) => {
+      var expr = $as_Lio_kaitai_struct_exprlang_Ast$expr(expr$2);
+      var x1 = this.detectType__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType(expr);
+      if ((x1 instanceof $c_Lio_kaitai_struct_datatype_DataType$IntType)) {
+        return "{d}"
+      } else if ((x1 instanceof $c_Lio_kaitai_struct_datatype_DataType$StrType)) {
+        return "{s}"
+      } else {
+        throw $ct_jl_UnsupportedOperationException__T__(new $c_jl_UnsupportedOperationException(), (("unable to convert " + x1) + " to string in format string (only integers and strings are supported)"))
+      }
+    })))));
+    var fmtString = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", "", "");
+    var this$3 = $n($as_sc_IterableOnceOps($n(exprs).map__F1__O(new $c_sjsr_AnonFunction1(((v$2) => {
+      var v = $as_Lio_kaitai_struct_exprlang_Ast$expr(v$2);
+      return this.translate__Lio_kaitai_struct_exprlang_Ast$expr__I__T(v, 0)
+    })))));
+    return (((("(try _imp_std.fmt.allocPrint(self._allocator(), \"" + fmtString) + "\", .{ ") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ", ", "")) + " }))")
+  }
 });
 $c_Lio_kaitai_struct_translators_ZigTranslator.prototype.kaitaiStreamPos__Lio_kaitai_struct_exprlang_Ast$expr__O = (function(value) {
   return this.kaitaiStreamPos__Lio_kaitai_struct_exprlang_Ast$expr__T(value)
@@ -95871,6 +95894,9 @@ $c_Lio_kaitai_struct_languages_CppCompiler.prototype.createSubstream__Lio_kaitai
 $c_Lio_kaitai_struct_languages_CppCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
 });
+$c_Lio_kaitai_struct_languages_CppCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
+});
 $c_Lio_kaitai_struct_languages_CppCompiler.prototype.attrParse__Lio_kaitai_struct_format_AttrLikeSpec__Lio_kaitai_struct_format_Identifier__s_Option__V = (function(attr, id, defEndian) {
   $f_Lio_kaitai_struct_languages_components_CommonReads__attrParse__Lio_kaitai_struct_format_AttrLikeSpec__Lio_kaitai_struct_format_Identifier__s_Option__V(this, attr, id, defEndian)
 });
@@ -96980,10 +97006,10 @@ $c_Lio_kaitai_struct_languages_CppCompiler.prototype.instanceFooter__V = (functi
 $c_Lio_kaitai_struct_languages_CppCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_CppCompiler__f_outSrc).puts__T__V((("if (" + this.calculatedFlagForName__Lio_kaitai_struct_format_Identifier__T(instName)) + ")"));
   $n(this.Lio_kaitai_struct_languages_CppCompiler__f_outSrc).inc__V();
-  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, false);
   $n(this.Lio_kaitai_struct_languages_CppCompiler__f_outSrc).dec__V()
 });
-$c_Lio_kaitai_struct_languages_CppCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_CppCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_CppCompiler__f_outSrc).puts__T__V((("return " + this.nonOwningPointer__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__T(instName, attrType)) + ";"))
 });
 $c_Lio_kaitai_struct_languages_CppCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
@@ -98015,6 +98041,9 @@ $c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.createSubstream__Lio
 $c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
 });
+$c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
+});
 $c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
   $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V(this, instName, dataType, value)
 });
@@ -98765,10 +98794,10 @@ $c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.instanceFooter__V = 
 $c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_JavaScriptCompiler__f_out).puts__T__V((("if (" + $m_Lio_kaitai_struct_languages_JavaScriptCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + " !== undefined)"));
   $n(this.Lio_kaitai_struct_languages_JavaScriptCompiler__f_out).inc__V();
-  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, false);
   $n(this.Lio_kaitai_struct_languages_JavaScriptCompiler__f_out).dec__V()
 });
-$c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_JavaScriptCompiler__f_out).puts__T__V((("return " + $m_Lio_kaitai_struct_languages_JavaScriptCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ";"))
 });
 $c_Lio_kaitai_struct_languages_JavaScriptCompiler.prototype.enumDeclaration__sci_List__T__sci_Seq__V = (function(curClass, enumName, enumColl) {
@@ -98970,6 +98999,9 @@ $c_Lio_kaitai_struct_languages_PHPCompiler.prototype.createSubstream__Lio_kaitai
 });
 $c_Lio_kaitai_struct_languages_PHPCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
+});
+$c_Lio_kaitai_struct_languages_PHPCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
 });
 $c_Lio_kaitai_struct_languages_PHPCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
   $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V(this, instName, dataType, value)
@@ -99614,10 +99646,10 @@ $c_Lio_kaitai_struct_languages_PHPCompiler.prototype.instanceHeader__sci_List__L
 $c_Lio_kaitai_struct_languages_PHPCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_PHPCompiler__f_out).puts__T__V((("if (" + $m_Lio_kaitai_struct_languages_PHPCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + " !== null)"));
   $n(this.Lio_kaitai_struct_languages_PHPCompiler__f_out).inc__V();
-  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, false);
   $n(this.Lio_kaitai_struct_languages_PHPCompiler__f_out).dec__V()
 });
-$c_Lio_kaitai_struct_languages_PHPCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_PHPCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_PHPCompiler__f_out).puts__T__V((("return " + $m_Lio_kaitai_struct_languages_PHPCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ";"))
 });
 $c_Lio_kaitai_struct_languages_PHPCompiler.prototype.enumDeclaration__sci_List__T__sci_Seq__V = (function(curClass, enumName, enumColl) {
@@ -99812,6 +99844,9 @@ $c_Lio_kaitai_struct_languages_PerlCompiler.prototype.createSubstream__Lio_kaita
 });
 $c_Lio_kaitai_struct_languages_PerlCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
+});
+$c_Lio_kaitai_struct_languages_PerlCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
 });
 $c_Lio_kaitai_struct_languages_PerlCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
   $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V(this, instName, dataType, value)
@@ -100393,7 +100428,7 @@ $c_Lio_kaitai_struct_languages_PerlCompiler.prototype.instanceHeader__sci_List__
 $c_Lio_kaitai_struct_languages_PerlCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_PerlCompiler__f_out).puts__T__V((((("return " + $m_Lio_kaitai_struct_languages_PerlCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + " if (") + $m_Lio_kaitai_struct_languages_PerlCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ");"))
 });
-$c_Lio_kaitai_struct_languages_PerlCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_PerlCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_PerlCompiler__f_out).puts__T__V((("return " + $m_Lio_kaitai_struct_languages_PerlCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ";"))
 });
 $c_Lio_kaitai_struct_languages_PerlCompiler.prototype.enumDeclaration__sci_List__T__sci_Seq__V = (function(curClass, enumName, enumColl) {
@@ -100622,6 +100657,9 @@ $c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.createSubstream__Lio_kai
 });
 $c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
+});
+$c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
 });
 $c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.attrParse__Lio_kaitai_struct_format_AttrLikeSpec__Lio_kaitai_struct_format_Identifier__s_Option__V = (function(attr, id, defEndian) {
   $f_Lio_kaitai_struct_languages_components_CommonReads__attrParse__Lio_kaitai_struct_format_AttrLikeSpec__Lio_kaitai_struct_format_Identifier__s_Option__V(this, attr, id, defEndian)
@@ -101304,10 +101342,10 @@ $c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.instanceFooter__V = (fun
 $c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_CSharpCompiler__f_out).puts__T__V((("if (" + this.flagForInstName__Lio_kaitai_struct_format_Identifier__T(instName)) + ")"));
   $n(this.Lio_kaitai_struct_languages_CSharpCompiler__f_out).inc__V();
-  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, false);
   $n(this.Lio_kaitai_struct_languages_CSharpCompiler__f_out).dec__V()
 });
-$c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_CSharpCompiler__f_out).puts__T__V((("return " + $m_Lio_kaitai_struct_languages_CSharpCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ";"))
 });
 $c_Lio_kaitai_struct_languages_CSharpCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
@@ -102165,10 +102203,10 @@ $c_Lio_kaitai_struct_languages_GoCompiler.prototype.instanceCalculate__Lio_kaita
 $c_Lio_kaitai_struct_languages_GoCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_GoCompiler__f_out).puts__T__V((("if (this." + this.calculatedFlagForName__Lio_kaitai_struct_format_Identifier__T(instName)) + ") {"));
   $n(this.Lio_kaitai_struct_languages_GoCompiler__f_out).inc__V();
-  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, false);
   this.universalFooter__V()
 });
-$c_Lio_kaitai_struct_languages_GoCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_GoCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_GoCompiler__f_out).puts__T__V((("return " + $m_Lio_kaitai_struct_languages_GoCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ", nil"))
 });
 $c_Lio_kaitai_struct_languages_GoCompiler.prototype.instanceSetCalculated__Lio_kaitai_struct_format_InstanceIdentifier__V = (function(instName) {
@@ -102381,6 +102419,9 @@ $c_Lio_kaitai_struct_languages_LuaCompiler.prototype.createSubstream__Lio_kaitai
 });
 $c_Lio_kaitai_struct_languages_LuaCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
+});
+$c_Lio_kaitai_struct_languages_LuaCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
 });
 $c_Lio_kaitai_struct_languages_LuaCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
   $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V(this, instName, dataType, value)
@@ -102769,13 +102810,13 @@ $c_Lio_kaitai_struct_languages_LuaCompiler.prototype.instanceFooter__V = (functi
 $c_Lio_kaitai_struct_languages_LuaCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_LuaCompiler__f_out).puts__T__V((("if self." + $m_Lio_kaitai_struct_languages_LuaCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(instName)) + " ~= nil then"));
   $n(this.Lio_kaitai_struct_languages_LuaCompiler__f_out).inc__V();
-  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, false);
   $n(this.Lio_kaitai_struct_languages_LuaCompiler__f_out).dec__V();
   $n(this.Lio_kaitai_struct_languages_LuaCompiler__f_out).puts__T__V("end");
   var this$1 = $n(this.Lio_kaitai_struct_languages_LuaCompiler__f_out);
   $n(this$1.Lio_kaitai_struct_StringLanguageOutputWriter__f_sb).append__T__scm_StringBuilder("\n")
 });
-$c_Lio_kaitai_struct_languages_LuaCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_LuaCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_LuaCompiler__f_out).puts__T__V(("return " + $m_Lio_kaitai_struct_languages_LuaCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)))
 });
 $c_Lio_kaitai_struct_languages_LuaCompiler.prototype.enumDeclaration__sci_List__T__sci_Seq__V = (function(curClass, enumName, enumColl) {
@@ -103140,6 +103181,9 @@ $c_Lio_kaitai_struct_languages_NimCompiler.prototype.createSubstream__Lio_kaitai
 $c_Lio_kaitai_struct_languages_NimCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
 });
+$c_Lio_kaitai_struct_languages_NimCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
+});
 $c_Lio_kaitai_struct_languages_NimCompiler.prototype.tryFinally__F0__F0__V = (function(tryBlock, finallyBlock) {
   $m_s_Predef$().$qmark$qmark$qmark__E()
 });
@@ -103479,7 +103523,7 @@ $c_Lio_kaitai_struct_languages_NimCompiler.prototype.instanceFooter__V = (functi
   var this$1 = $n(this.Lio_kaitai_struct_languages_NimCompiler__f_out);
   $n(this$1.Lio_kaitai_struct_StringLanguageOutputWriter__f_sb).append__T__scm_StringBuilder("\n")
 });
-$c_Lio_kaitai_struct_languages_NimCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_NimCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_NimCompiler__f_out).puts__T__V((("this." + this.instanceFlagIdentifier__Lio_kaitai_struct_format_InstanceIdentifier__T(instName)) + " = true"));
   $n(this.Lio_kaitai_struct_languages_NimCompiler__f_out).puts__T__V(("return " + this.privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)))
 });
@@ -104042,6 +104086,9 @@ $c_Lio_kaitai_struct_languages_RubyCompiler.prototype.attrParse2$default$7__s_Op
 });
 $c_Lio_kaitai_struct_languages_RubyCompiler.prototype.createSubstream__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, bt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstream__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, bt, io, rep, defEndian)
+});
+$c_Lio_kaitai_struct_languages_RubyCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
 });
 $c_Lio_kaitai_struct_languages_RubyCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
   $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V(this, instName, dataType, value)
@@ -104663,7 +104710,7 @@ $c_Lio_kaitai_struct_languages_RubyCompiler.prototype.instanceHeader__T__Lio_kai
 $c_Lio_kaitai_struct_languages_RubyCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_RubyCompiler__f_out).puts__T__V((((("return " + $m_Lio_kaitai_struct_languages_RubyCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + " unless ") + $m_Lio_kaitai_struct_languages_RubyCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ".nil?"))
 });
-$c_Lio_kaitai_struct_languages_RubyCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_RubyCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_RubyCompiler__f_out).puts__T__V($m_Lio_kaitai_struct_languages_RubyCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName))
 });
 $c_Lio_kaitai_struct_languages_RubyCompiler.prototype.enumDeclaration__T__T__sci_Seq__V = (function(curClass, enumName, enumColl) {
@@ -104868,6 +104915,9 @@ $c_Lio_kaitai_struct_languages_RustCompiler.prototype.results__Lio_kaitai_struct
 });
 $c_Lio_kaitai_struct_languages_RustCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
+});
+$c_Lio_kaitai_struct_languages_RustCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
 });
 $c_Lio_kaitai_struct_languages_RustCompiler.prototype.tryFinally__F0__F0__V = (function(tryBlock, finallyBlock) {
   $m_s_Predef$().$qmark$qmark$qmark__E()
@@ -105514,7 +105564,7 @@ $c_Lio_kaitai_struct_languages_RustCompiler.prototype.instanceCalculate__Lio_kai
     this.handleAssignmentSimple__Lio_kaitai_struct_format_Identifier__T__V(instName, ((("(" + $f_Lio_kaitai_struct_languages_components_ObjectOrientedLanguage__expression__Lio_kaitai_struct_exprlang_Ast$expr__T(this, value)) + ") as ") + $m_Lio_kaitai_struct_languages_RustCompiler$().kaitaiPrimitiveToNativeType__Lio_kaitai_struct_datatype_DataType__T(dataType)))
   }
 });
-$c_Lio_kaitai_struct_languages_RustCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_RustCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_RustCompiler__f_out).puts__T__V((("Ok(" + $m_Lio_kaitai_struct_languages_RustCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__Z__T(instName, false)) + ")"))
 });
 $c_Lio_kaitai_struct_languages_RustCompiler.prototype.enumDeclaration__sci_List__T__sci_Seq__V = (function(curClass, enumName, enumColl) {
@@ -107031,9 +107081,9 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.fileHeader__T__V = (functio
   var this$1 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_outHeader);
   $n(this$1.Lio_kaitai_struct_StringLanguageOutputWriter__f_sb).append__T__scm_StringBuilder("\n");
   var this$2 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_importList);
-  $m_Lio_kaitai_struct_Utils$().addUniqueAttr__scm_ListBuffer__O__V(this$2.Lio_kaitai_struct_ImportList__f_list, "const std = @import(\"std\");");
+  $m_Lio_kaitai_struct_Utils$().addUniqueAttr__scm_ListBuffer__O__V(this$2.Lio_kaitai_struct_ImportList__f_list, "const _imp_std = @import(\"std\");");
   var this$3 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_importList);
-  $m_Lio_kaitai_struct_Utils$().addUniqueAttr__scm_ListBuffer__O__V(this$3.Lio_kaitai_struct_ImportList__f_list, "const kaitai_struct = @import(\"kaitai_struct\");");
+  $m_Lio_kaitai_struct_Utils$().addUniqueAttr__scm_ListBuffer__O__V(this$3.Lio_kaitai_struct_ImportList__f_list, "const _imp_kaitai_struct = @import(\"kaitai_struct\");");
   var this$4 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out);
   $n(this$4.Lio_kaitai_struct_StringLanguageOutputWriter__f_sb).append__T__scm_StringBuilder("\n")
 });
@@ -107056,8 +107106,8 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.classHeader__T__V = (functi
   }
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.classFooter__sci_List__V = (function(name) {
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("_arena: *std.heap.ArenaAllocator,");
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("_io: *kaitai_struct.KaitaiStream,");
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("_arena: *_imp_std.heap.ArenaAllocator,");
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("_io: *_imp_kaitai_struct.KaitaiStream,");
   var rc9 = false;
   var x2 = null;
   var x1 = $n($n($n(this.Lio_kaitai_struct_languages_components_LanguageCompiler__f_typeProvider).Lio_kaitai_struct_ClassTypeProvider__f_nowClass).Lio_kaitai_struct_format_ClassSpec__f_meta).Lio_kaitai_struct_format_MetaSpec__f_endian;
@@ -107106,7 +107156,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.classConstructorHeader__T__
   };
   var paramsArg = $n($$x2).join__sc_IterableOnce__T__T__T__T($$x1, ", ", ", ", "");
   var endianSuffix = (isHybrid ? ", _is_le: ?bool" : "");
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((((((("pub fn create(_arena: *std.heap.ArenaAllocator, _io: *kaitai_struct.KaitaiStream, _parent: ?" + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__T(parentType)) + ", _root: ?*") + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(rootClassName)) + endianSuffix) + paramsArg) + ") !*") + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(name)) + " {"));
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((((((("pub fn create(_arena: *_imp_std.heap.ArenaAllocator, _io: *_imp_kaitai_struct.KaitaiStream, _parent: ?" + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__T(parentType)) + ", _root: ?*") + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(rootClassName)) + endianSuffix) + paramsArg) + ") !*") + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(name)) + " {"));
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).inc__V();
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("const self = try _arena.allocator().create(" + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(name)) + ");"));
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("self.* = .{");
@@ -107140,7 +107190,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.classConstructorFooter__V =
   this.universalFooter__V();
   var $$x1 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out);
   var name = $as_T($n($n($n(this.Lio_kaitai_struct_languages_components_LanguageCompiler__f_typeProvider).Lio_kaitai_struct_ClassTypeProvider__f_nowClass).Lio_kaitai_struct_format_ClassSpec__f_name).last__O());
-  $n($$x1).puts__T__V((("fn _allocator(self: *const " + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(name)) + ") std.mem.Allocator {"));
+  $n($$x1).puts__T__V((("fn _allocator(self: *const " + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(name)) + ") _imp_std.mem.Allocator {"));
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).inc__V();
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("return self._arena.allocator();");
   this.universalFooter__V()
@@ -107188,6 +107238,9 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.readHeader__s_Option__Z__V 
   }
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.attributeDeclaration__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(attrName, attrType, isNullable) {
+  if ((attrName instanceof $c_Lio_kaitai_struct_format_RawIdentifier)) {
+    return (void 0)
+  };
   var x$2 = $m_Lio_kaitai_struct_format_RootIdentifier$();
   if (((attrName !== null) && $n(attrName).equals__O__Z(x$2))) {
     var $$x1 = true
@@ -107269,23 +107322,33 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.attrParseHybrid__F0__F0__V 
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("}")
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.attrProcess__Lio_kaitai_struct_format_ProcessExpr__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_format_RepeatSpec__V = (function(proc, varSrc, varDest, rep) {
-  var srcExpr = this.getRawIdExpr__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_format_RepeatSpec__T(varSrc, rep);
+  var srcExpr = $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(varSrc);
+  var minArgs = ("self._allocator(), " + srcExpr);
   if ((proc instanceof $c_Lio_kaitai_struct_format_ProcessXor)) {
     var x2 = $as_Lio_kaitai_struct_format_ProcessXor(proc);
     var xorValue = $n(x2).Lio_kaitai_struct_format_ProcessXor__f_key;
     var x1$2 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_translator).detectType__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType(xorValue);
-    var xorValueStr = ((x1$2 instanceof $c_Lio_kaitai_struct_datatype_DataType$IntType) ? $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_translator).doCast__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType__T(xorValue, new $c_Lio_kaitai_struct_datatype_DataType$Int1Type(true)) : $f_Lio_kaitai_struct_languages_components_ObjectOrientedLanguage__expression__Lio_kaitai_struct_exprlang_Ast$expr__T(this, xorValue));
-    var expr$2 = (((("kaitai_struct.KaitaiStream.processXor(" + srcExpr) + ", ") + xorValueStr) + ")")
+    if ((x1$2 instanceof $c_Lio_kaitai_struct_datatype_DataType$IntType)) {
+      var procName = "processXorOne"
+    } else {
+      if ((!(x1$2 instanceof $c_Lio_kaitai_struct_datatype_DataType$BytesType))) {
+        throw new $c_s_MatchError(x1$2)
+      };
+      var procName = "processXorMany"
+    };
+    var x1$3 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_translator).detectType__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType(xorValue);
+    var xorValueStr = ((x1$3 instanceof $c_Lio_kaitai_struct_datatype_DataType$IntType) ? $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_translator).doCast__Lio_kaitai_struct_exprlang_Ast$expr__Lio_kaitai_struct_datatype_DataType__T(xorValue, new $c_Lio_kaitai_struct_datatype_DataType$Int1Type(false)) : $f_Lio_kaitai_struct_languages_components_ObjectOrientedLanguage__expression__Lio_kaitai_struct_exprlang_Ast$expr__T(this, xorValue));
+    var expr$2 = (((((("try _imp_kaitai_struct.KaitaiStream." + procName) + "(") + minArgs) + ", ") + xorValueStr) + ")")
   } else {
     var x = $m_Lio_kaitai_struct_format_ProcessZlib$();
     if ((x === proc)) {
-      var expr$2 = (("kaitai_struct.KaitaiStream.processZlib(" + srcExpr) + ")")
+      var expr$2 = (("try _imp_kaitai_struct.KaitaiStream.processZlib(" + minArgs) + ")")
     } else if ((proc instanceof $c_Lio_kaitai_struct_format_ProcessRotate)) {
       var x4 = $as_Lio_kaitai_struct_format_ProcessRotate(proc);
       var isLeft = $n(x4).Lio_kaitai_struct_format_ProcessRotate__f_left;
       var rotValue = $n(x4).Lio_kaitai_struct_format_ProcessRotate__f_key;
       var expr = (isLeft ? $f_Lio_kaitai_struct_languages_components_ObjectOrientedLanguage__expression__Lio_kaitai_struct_exprlang_Ast$expr__T(this, rotValue) : (("8 - (" + $f_Lio_kaitai_struct_languages_components_ObjectOrientedLanguage__expression__Lio_kaitai_struct_exprlang_Ast$expr__T(this, rotValue)) + ")"));
-      var expr$2 = (((("kaitai_struct.KaitaiStream.processRotateLeft(" + srcExpr) + ", ") + expr) + ", 1)")
+      var expr$2 = (((("try _imp_kaitai_struct.KaitaiStream.processRotateLeft(" + minArgs) + ", ") + expr) + ")")
     } else {
       if ((!(proc instanceof $c_Lio_kaitai_struct_format_ProcessCustom))) {
         throw new $c_s_MatchError(proc)
@@ -107304,34 +107367,25 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.attrProcess__Lio_kaitai_str
       };
       var name$1 = $as_T($n(name).last__O());
       var procClass = ((namespace + $$x1) + $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(name$1));
-      var procName = ("_process_" + $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(varSrc));
+      var procName$2 = ("_process_" + $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(varSrc));
       var $$x2 = $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out);
       var this$6 = $n($as_sc_IterableOnceOps($n(args).map__F1__O(new $c_sjsr_AnonFunction1(((e$2) => {
         var e = $as_Lio_kaitai_struct_exprlang_Ast$expr(e$2);
         return $f_Lio_kaitai_struct_languages_components_ObjectOrientedLanguage__expression__Lio_kaitai_struct_exprlang_Ast$expr__T(this, e)
       })))));
-      $n($$x2).puts__T__V((((((((procClass + " ") + procName) + " = new ") + procClass) + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$6, "", ", ", "")) + ");"));
-      var expr$2 = (((procName + ".decode(") + srcExpr) + ")")
+      $n($$x2).puts__T__V((((((((procClass + " ") + procName$2) + " = new ") + procClass) + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$6, "", ", ", "")) + ");"));
+      var expr$2 = (((procName$2 + ".decode(") + minArgs) + ")")
     }
   };
-  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, varDest, expr$2, rep, false)
+  this.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(varDest, expr$2, rep, false)
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.allocateIO__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_format_RepeatSpec__T = (function(varName, rep) {
   var id = new $c_Lio_kaitai_struct_format_IoStorageIdentifier(varName);
   var ioName = $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(id);
-  var args = ((rep instanceof $c_Lio_kaitai_struct_format_RepeatUntil) ? $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_translator).doLocalName__T__T($m_Lio_kaitai_struct_format_Identifier$().Lio_kaitai_struct_format_Identifier$__f_ITERATOR2) : this.getRawIdExpr__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_format_RepeatSpec__T(varName, rep));
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("const " + ioName) + " = try self._allocator().create(kaitai_struct.KaitaiStream);"));
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((ioName + ".* = kaitai_struct.KaitaiStream.fromBytes(") + args) + ");"));
+  var args = $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(varName);
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("const " + ioName) + " = try self._allocator().create(_imp_kaitai_struct.KaitaiStream);"));
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((ioName + ".* = _imp_kaitai_struct.KaitaiStream.fromBytes(") + args) + ");"));
   return ioName
-});
-$c_Lio_kaitai_struct_languages_ZigCompiler.prototype.getRawIdExpr__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_format_RepeatSpec__T = (function(varName, rep) {
-  var memberName = $m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(varName);
-  var x = $m_Lio_kaitai_struct_format_NoRepeat$();
-  if ((x === rep)) {
-    return memberName
-  } else {
-    return (memberName + ".items[i]")
-  }
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.useIO__Lio_kaitai_struct_exprlang_Ast$expr__T = (function(ioEx) {
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("const io = " + $f_Lio_kaitai_struct_languages_components_ObjectOrientedLanguage__expression__Lio_kaitai_struct_exprlang_Ast$expr__T(this, ioEx)) + ";"));
@@ -107354,8 +107408,18 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.condIfHeader__Lio_kaitai_st
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).inc__V()
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.condRepeatInitAttr__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__V = (function(id, dataType) {
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V(((($m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(id) + " = try self._allocator().create(std.ArrayList(") + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__T(dataType)) + "));"));
+  if ((id instanceof $c_Lio_kaitai_struct_format_RawIdentifier)) {
+    return (void 0)
+  };
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V(((($m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(id) + " = try self._allocator().create(_imp_std.ArrayList(") + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__T(dataType)) + "));"));
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V(($m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(id) + ".* = .empty;"))
+});
+$c_Lio_kaitai_struct_languages_ZigCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  if ((id instanceof $c_Lio_kaitai_struct_format_RawIdentifier)) {
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((("const " + $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(id)) + " = ") + expr) + ";"))
+  } else {
+    $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
+  }
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.condRepeatEosHeader__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_datatype_DataType__V = (function(id, io, dataType) {
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("{");
@@ -107409,8 +107473,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.condRepeatUntilFooter__Lio_
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("}")
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.handleAssignmentSimple__Lio_kaitai_struct_format_Identifier__T__V = (function(id, expr) {
-  var lhs = ((id instanceof $c_Lio_kaitai_struct_format_InstanceIdentifier) ? "_v" : $m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(id));
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((lhs + " = ") + expr) + ";"))
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V(((($m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(id) + " = ") + expr) + ";"))
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.handleAssignmentTempVar__Lio_kaitai_struct_datatype_DataType__T__T__V = (function(dataType, id, expr) {
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((("const " + id) + " = ") + expr) + ";"))
@@ -107534,7 +107597,7 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.bytesPadTermExpr__T__s_Opti
       };
       var this$2 = $n($$x1);
       if ($uZ((this$2.isEmpty__Z() || this$2.get__O()))) {
-        var expr1 = (((("kaitai_struct.KaitaiStream.bytesStripRight(" + expr0) + ", ") + padByte) + ")");
+        var expr1 = (((("_imp_kaitai_struct.KaitaiStream.bytesStripRight(" + expr0) + ", ") + padByte) + ")");
         break matchEnd4
       }
     };
@@ -107545,9 +107608,9 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.bytesPadTermExpr__T__s_Opti
     var term$3 = $as_sci_Seq($n(x2$2).s_Some__f_value);
     if (($n(term$3).length__I() === 1)) {
       var t = (255 & $uB($n(term$3).head__O()));
-      var expr2 = (((((("kaitai_struct.KaitaiStream.bytesTerminate(" + expr1) + ", ") + t) + ", ") + include) + ")")
+      var expr2 = (((((("_imp_kaitai_struct.KaitaiStream.bytesTerminate(" + expr1) + ", ") + t) + ", ") + include) + ")")
     } else {
-      var expr2 = (((((("kaitai_struct.KaitaiStream.bytesTerminateMulti(" + expr1) + ", ") + $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_translator).doByteArrayLiteral__sci_Seq__T(term$3)) + ", ") + include) + ")")
+      var expr2 = (((((("_imp_kaitai_struct.KaitaiStream.bytesTerminateMulti(" + expr1) + ", ") + $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_translator).doByteArrayLiteral__sci_Seq__T(term$3)) + ", ") + include) + ")")
     }
   } else {
     var x = $m_s_None$();
@@ -107671,18 +107734,41 @@ $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.instanceHeader__T__Lio_kait
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).inc__V()
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("if (" + $m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ") |_v|"));
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("if (self." + $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(instName)) + ") |_v|"));
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).inc__V();
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("return _v;");
   $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).dec__V()
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.instanceTempVarDeclaration__Lio_kaitai_struct_datatype_DataType__Z__V = (function(dataType, isNullable) {
-  var defaultValue = (isNullable ? " = null" : " = undefined");
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V(((("var _v: " + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Z__T(dataType, isNullable)) + defaultValue) + ";"))
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("var _v: " + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__T(dataType)) + " = undefined;"))
 });
-$c_Lio_kaitai_struct_languages_ZigCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V(($m_Lio_kaitai_struct_languages_ZigCompiler$().privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName) + " = _v;"));
-  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("return _v;")
+$c_Lio_kaitai_struct_languages_ZigCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
+  if (isNullable) {
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("if (_n) {");
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).inc__V();
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((((("self." + $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(instName)) + " = @as(") + this.kaitaiType2NativeType__Lio_kaitai_struct_datatype_DataType__Z__T(attrType, isNullable)) + ", null);"));
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("return null;");
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).dec__V();
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("} else {");
+    $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).inc__V()
+  };
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V((("self." + $m_Lio_kaitai_struct_languages_ZigCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(instName)) + " = _v;"));
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("return _v;");
+  if (isNullable) {
+    this.universalFooter__V()
+  }
+});
+$c_Lio_kaitai_struct_languages_ZigCompiler.prototype.condIfSetNull__Lio_kaitai_struct_format_Identifier__V = (function(instName) {
+  if ((!(instName instanceof $c_Lio_kaitai_struct_format_InstanceIdentifier))) {
+    return (void 0)
+  };
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("var _n = true;")
+});
+$c_Lio_kaitai_struct_languages_ZigCompiler.prototype.condIfSetNonNull__Lio_kaitai_struct_format_Identifier__V = (function(instName) {
+  if ((!(instName instanceof $c_Lio_kaitai_struct_format_InstanceIdentifier))) {
+    return (void 0)
+  };
+  $n(this.Lio_kaitai_struct_languages_ZigCompiler__f_out).puts__T__V("_n = false;")
 });
 $c_Lio_kaitai_struct_languages_ZigCompiler.prototype.enumDeclaration__T__T__sci_Seq__V = (function(curClass, enumName, enumColl) {
   var enumClass = $m_Lio_kaitai_struct_Utils$().upperCamelCase__T__T(enumName);
@@ -109366,6 +109452,9 @@ $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.attrParse2$default$7__s_Op
 $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.createSubstream__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, bt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstream__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, bt, io, rep, defEndian)
 });
+$c_Lio_kaitai_struct_languages_JavaCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
+});
 $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.attrParse__Lio_kaitai_struct_format_AttrLikeSpec__Lio_kaitai_struct_format_Identifier__s_Option__V = (function(attr, id, defEndian) {
   $f_Lio_kaitai_struct_languages_components_CommonReads__attrParse__Lio_kaitai_struct_format_AttrLikeSpec__Lio_kaitai_struct_format_Identifier__s_Option__V(this, attr, id, defEndian)
 });
@@ -110551,7 +110640,7 @@ $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceHeader__T__Lio_kai
 $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceCheckCacheAndReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, dataType) {
   $n(this.Lio_kaitai_struct_languages_JavaCompiler__f_out).puts__T__V((("if (" + this.privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + " != null)"));
   $n(this.Lio_kaitai_struct_languages_JavaCompiler__f_out).inc__V();
-  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V(instName, dataType);
+  this.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V(instName, dataType, false);
   $n(this.Lio_kaitai_struct_languages_JavaCompiler__f_out).dec__V()
 });
 $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceCheckWriteFlagAndWrite__Lio_kaitai_struct_format_InstanceIdentifier__V = (function(instName) {
@@ -110573,7 +110662,7 @@ $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceHasValueIfHeader__
 $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceHasValueIfFooter__V = (function() {
   this.universalFooter__V()
 });
-$c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_JavaCompiler__f_out).puts__T__V((("return " + this.privateMemberName__Lio_kaitai_struct_format_Identifier__T(instName)) + ";"))
 });
 $c_Lio_kaitai_struct_languages_JavaCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
@@ -111038,6 +111127,9 @@ $c_Lio_kaitai_struct_languages_PythonCompiler.prototype.createSubstream__Lio_kai
 });
 $c_Lio_kaitai_struct_languages_PythonCompiler.prototype.createSubstreamFixedSize__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesLimitType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T = (function(id, blt, io, rep, defEndian) {
   return $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__createSubstreamBuffered__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType$BytesType__T__Lio_kaitai_struct_format_RepeatSpec__s_Option__T(this, id, blt, io, rep, defEndian)
+});
+$c_Lio_kaitai_struct_languages_PythonCompiler.prototype.handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V = (function(id, expr, rep, isRaw) {
+  $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__handleAssignment__Lio_kaitai_struct_format_Identifier__T__Lio_kaitai_struct_format_RepeatSpec__Z__V(this, id, expr, rep, isRaw)
 });
 $c_Lio_kaitai_struct_languages_PythonCompiler.prototype.instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V = (function(instName, dataType, value) {
   $f_Lio_kaitai_struct_languages_components_EveryReadIsExpression__instanceCalculate__Lio_kaitai_struct_format_Identifier__Lio_kaitai_struct_datatype_DataType__Lio_kaitai_struct_exprlang_Ast$expr__V(this, instName, dataType, value)
@@ -112008,7 +112100,7 @@ $c_Lio_kaitai_struct_languages_PythonCompiler.prototype.instanceHasValueIfHeader
 $c_Lio_kaitai_struct_languages_PythonCompiler.prototype.instanceHasValueIfFooter__V = (function() {
   this.universalFooter__V()
 });
-$c_Lio_kaitai_struct_languages_PythonCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__V = (function(instName, attrType) {
+$c_Lio_kaitai_struct_languages_PythonCompiler.prototype.instanceReturn__Lio_kaitai_struct_format_InstanceIdentifier__Lio_kaitai_struct_datatype_DataType__Z__V = (function(instName, attrType, isNullable) {
   $n(this.Lio_kaitai_struct_languages_PythonCompiler__f_out).puts__T__V((("return getattr(self, '" + $m_Lio_kaitai_struct_languages_PythonCompiler$().idToStr__Lio_kaitai_struct_format_Identifier__T(instName)) + "', None)"))
 });
 $c_Lio_kaitai_struct_languages_PythonCompiler.prototype.instanceInvalidate__Lio_kaitai_struct_format_InstanceIdentifier__V = (function(instName) {
