@@ -176,6 +176,7 @@
          * @param pos Position to seek to.
          */
         KaitaiStream.prototype.seek = function (pos) {
+            this.alignToByte();
             var npos = Math.max(0, Math.min(this.size, pos));
             this.pos = (isNaN(npos) || !isFinite(npos)) ? 0 : npos;
         };
@@ -203,6 +204,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readS1 = function () {
+            this.alignToByte();
             this.ensureBytesLeft(1);
             var v = this._dataView.getInt8(this.pos);
             this.pos += 1;
@@ -217,6 +219,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readS2be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(2);
             var v = this._dataView.getInt16(this.pos);
             this.pos += 2;
@@ -228,6 +231,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readS4be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(4);
             var v = this._dataView.getInt32(this.pos);
             this.pos += 4;
@@ -242,6 +246,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readS8be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(8);
             var v1 = this.readU4be();
             var v2 = this.readU4be();
@@ -262,6 +267,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readS2le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(2);
             var v = this._dataView.getInt16(this.pos, true);
             this.pos += 2;
@@ -273,6 +279,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readS4le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(4);
             var v = this._dataView.getInt32(this.pos, true);
             this.pos += 4;
@@ -287,6 +294,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readS8le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(8);
             var v1 = this.readU4le();
             var v2 = this.readU4le();
@@ -307,6 +315,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readU1 = function () {
+            this.alignToByte();
             this.ensureBytesLeft(1);
             var v = this._dataView.getUint8(this.pos);
             this.pos += 1;
@@ -321,6 +330,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readU2be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(2);
             var v = this._dataView.getUint16(this.pos);
             this.pos += 2;
@@ -332,6 +342,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readU4be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(4);
             var v = this._dataView.getUint32(this.pos);
             this.pos += 4;
@@ -346,6 +357,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readU8be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(8);
             var v1 = this.readU4be();
             var v2 = this.readU4be();
@@ -360,6 +372,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readU2le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(2);
             var v = this._dataView.getUint16(this.pos, true);
             this.pos += 2;
@@ -371,6 +384,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readU4le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(4);
             var v = this._dataView.getUint32(this.pos, true);
             this.pos += 4;
@@ -385,6 +399,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readU8le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(8);
             var v1 = this.readU4le();
             var v2 = this.readU4le();
@@ -402,6 +417,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readF4be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(4);
             var v = this._dataView.getFloat32(this.pos);
             this.pos += 4;
@@ -413,6 +429,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readF8be = function () {
+            this.alignToByte();
             this.ensureBytesLeft(8);
             var v = this._dataView.getFloat64(this.pos);
             this.pos += 8;
@@ -427,6 +444,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readF4le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(4);
             var v = this._dataView.getFloat32(this.pos, true);
             this.pos += 4;
@@ -438,6 +456,7 @@
          * @returns The read number.
          */
         KaitaiStream.prototype.readF8le = function () {
+            this.alignToByte();
             this.ensureBytesLeft(8);
             var v = this._dataView.getFloat64(this.pos, true);
             this.pos += 8;
@@ -471,7 +490,7 @@
                 // 8 bits => 1 byte
                 // 9 bits => 2 bytes
                 var bytesNeeded = ((bitsNeeded - 1) >> 3) + 1; // `ceil(bitsNeeded / 8)` (NB: `x >> 3` is `floor(x / 8)`)
-                var buf = this.readBytes(bytesNeeded);
+                var buf = this.mapUint8Array(bytesNeeded);
                 for (var i = 0; i < bytesNeeded; i++) {
                     res = res << 8 | buf[i];
                 }
@@ -516,7 +535,7 @@
                 // 8 bits => 1 byte
                 // 9 bits => 2 bytes
                 var bytesNeeded = ((bitsNeeded - 1) >> 3) + 1; // `ceil(bitsNeeded / 8)` (NB: `x >> 3` is `floor(x / 8)`)
-                var buf = this.readBytes(bytesNeeded);
+                var buf = this.mapUint8Array(bytesNeeded);
                 for (var i = 0; i < bytesNeeded; i++) {
                     res |= buf[i] << (i * 8);
                 }
@@ -550,12 +569,14 @@
          * @returns The read bytes.
          */
         KaitaiStream.prototype.readBytes = function (len) {
+            this.alignToByte();
             return this.mapUint8Array(len);
         };
         /**
          * @returns The read bytes.
          */
         KaitaiStream.prototype.readBytesFull = function () {
+            this.alignToByte();
             return this.mapUint8Array(this.size - this.pos);
         };
         /**
@@ -569,6 +590,7 @@
          * @throws {string}
          */
         KaitaiStream.prototype.readBytesTerm = function (terminator, include, consume, eosError) {
+            this.alignToByte();
             var blen = this.size - this.pos;
             var u8 = new Uint8Array(this._buffer, this._byteOffset + this.pos);
             var i;
@@ -608,6 +630,7 @@
          * @throws {string}
          */
         KaitaiStream.prototype.readBytesTermMulti = function (terminator, include, consume, eosError) {
+            this.alignToByte();
             var unitSize = terminator.length;
             var data = new Uint8Array(this._buffer, this._byteOffset + this.pos, this.size - this.pos);
             var res = KaitaiStream.bytesTerminateMulti(data, terminator, true);
